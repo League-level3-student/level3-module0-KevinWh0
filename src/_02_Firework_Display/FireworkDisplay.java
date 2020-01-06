@@ -71,7 +71,6 @@ public class FireworkDisplay extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		firework.updateSparks();
 		repaint();
-		
 		boolean reset = true;
 		if(!firework.dead) {
 			reset = false;

@@ -8,9 +8,9 @@ import org.jointheleague.graphical.robot.Robot;
 
 public class _01_RobotRace {
 	static boolean noWinner = true;
+	///JOptionPane jop = new JOptionPane();
 	//1. make a main method
 		public static void main(String[] args) {
-			
 			Robot[] r = new Robot[5];
 			
 			for(int i = 0; i < r.length; i++) {
@@ -22,8 +22,13 @@ public class _01_RobotRace {
 			Random rand = new Random();
 			while(noWinner) {
 				for(int i = 0; i < r.length; i++) {
-					r[i].move(rand.nextInt(50));
-					
+					//r[i].move(rand.nextInt(50));
+					r[i].setY(r[i].getY()-rand.nextInt(2));
+					if(r[i].getY() < 0) {
+						noWinner = false;
+						JOptionPane.showMessageDialog(null, "Robot " + (i+1) + " Wins!");
+
+					}
 				}
 			}
 		}
